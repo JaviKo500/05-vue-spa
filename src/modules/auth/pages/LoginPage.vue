@@ -21,10 +21,23 @@
       <a href="#" class="hover:underline">Forgot Password?</a>
     </div>
     <!-- Login Button -->
-    <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full">Login</button>
+    <button 
+      type="button" 
+      @click="onLogin"
+      class="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full">Login</button>
   </form>
   <!-- Sign up  Link -->
   <div class="mt-6 text-blue-500 text-center">
      <RouterLink :to="{ name: 'register' }">Sign up Here</RouterLink>
   </div>
 </template>
+<script lang="ts" setup>
+  import { useRouter } from 'vue-router';
+  const router = useRouter();
+  const onLogin = () => {
+    localStorage.setItem('userId', '123456789')
+    router.replace({
+      name: 'home'
+    });
+  }
+</script>
