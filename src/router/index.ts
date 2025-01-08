@@ -49,6 +49,12 @@ const router = createRouter({
           component: () => import('@auth/pages/RegisterPage.vue')
         }
       ]
+    },
+    // Not Found
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      component: () => import('@common/pages/NotFound404.vue'),
     }
   ]
 });
