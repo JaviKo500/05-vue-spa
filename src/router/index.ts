@@ -33,7 +33,22 @@ const router = createRouter({
     // Auth
     {
       path: '/auth',
-      component: () => import('@auth/pages/LoginPage.vue')
+      name: 'auth',
+      // redirect: '/login',
+      redirect: { name: 'login' },
+      component: () => import('@auth/layouts/AuthLayout.vue'),
+      children: [
+        {
+          path: '/login',
+          name: 'login',
+          component: () => import('@auth/pages/LoginPage.vue')
+        },
+        {
+          path: '/register',
+          name: 'register',
+          component: () => import('@auth/pages/RegisterPage.vue')
+        }
+      ]
     }
   ]
 });
