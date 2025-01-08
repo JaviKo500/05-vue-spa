@@ -8,7 +8,7 @@
       height="200"
       :alt="`Pokemon #${id}`" srcset="">
     <RouterLink
-      class="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4"
+      class="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 mt-5"
       :to="{ name:'pokemon', params: { id: id + 1 } }">
       Next
     </RouterLink>
