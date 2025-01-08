@@ -14,6 +14,7 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
       '@landing': fileURLToPath(new URL('./src/modules/landing', import.meta.url)),
+      '@auth': fileURLToPath(new URL('./src/modules/auth', import.meta.url)),
     },
   },
 })

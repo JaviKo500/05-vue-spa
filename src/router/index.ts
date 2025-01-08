@@ -5,23 +5,35 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomePage
+      name: 'landing',
+      component: () => import('@landing/layouts/LandingLayout.vue'),
+      children: [
+        {
+          path: '/',
+          name: 'home',
+          component: HomePage
+        },
+        {
+          path: '/features',
+          name: 'features',
+          component: () => import('@landing/pages/FeaturesPage.vue')
+        },
+        {
+          path: '/pricing',
+          name: 'pricing',
+          component: () => import('@landing/pages/PricingPage.vue')
+        },
+        {
+          path: '/contact',
+          name: 'contact',
+          component: () => import('@landing/pages/ContactPage.vue')
+        },
+      ]
     },
+    // Auth
     {
-      path: '/features',
-      name: 'features',
-      component: () => import('@landing/pages/FeaturesPage.vue')
-    },
-    {
-      path: '/pricing',
-      name: 'pricing',
-      component: () => import('@landing/pages/PricingPage.vue')
-    },
-    {
-      path: '/contact',
-      name: 'contact',
-      component: () => import('@landing/pages/ContactPage.vue')
+      path: '/auth',
+      component: () => import('@auth/pages/LoginPage.vue')
     }
   ]
 });
