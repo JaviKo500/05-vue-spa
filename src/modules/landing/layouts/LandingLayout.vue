@@ -13,6 +13,7 @@
           <RouterLink to="/features"> Features </RouterLink>
           <RouterLink to="/pricing"> Pricing </RouterLink>
           <RouterLink to="/contact"> Contact </RouterLink>
+          <RouterLink to="/pokemon/1"> Pokemon </RouterLink>
         </div>
         <div class="space-x-4">
           <RouterLink :to="{ name: 'login' }"> Login </RouterLink>

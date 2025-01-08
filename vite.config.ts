@@ -16,6 +16,7 @@ export default defineConfig({
       '@landing': fileURLToPath(new URL('./src/modules/landing', import.meta.url)),
       '@auth': fileURLToPath(new URL('./src/modules/auth', import.meta.url)),
       '@common': fileURLToPath(new URL('./src/modules/common', import.meta.url)),
+      '@pokemons': fileURLToPath(new URL('./src/modules/pokemons', import.meta.url)),
     },
   },
 })
