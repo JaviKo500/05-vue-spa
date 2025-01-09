@@ -5,3 +5,7 @@
 html, body {
   background-color: #d3d3d3;
 }
+
+.router-link-exact-active {
+  @apply text-blue-500;
+}
