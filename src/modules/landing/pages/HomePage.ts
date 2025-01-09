@@ -5,11 +5,13 @@ import {
   onBeforeUnmount,
   onBeforeUpdate,
   onDeactivated,
-  onErrorCaptured, onMounted, onRenderTracked, onRenderTriggered, onUnmounted, onUpdated
+  onErrorCaptured, onMounted, onRenderTracked, onRenderTriggered, onUnmounted, onUpdated,
+  ref
 } from 'vue';
 
 export default defineComponent({
   setup: () => {
+    const counter = ref(0);
     console.log('<--------------- JK HomePage --------------->');
     console.log('HomePage setup');
     onMounted(() => {
@@ -57,5 +59,8 @@ export default defineComponent({
       console.log('<--------------- JK HomePage --------------->');
       console.log('onDeactivated');
     });
+    return {
+      counter,
+    }
   }
 });
